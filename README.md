@@ -56,3 +56,7 @@ php artisan vendor:publish --force
 ~~~
 
 That's it, now just execute the project on your specified domain.
+
+### Video Tutorial:
+
+[![Watch the video](https://github.com/bagisto/stock-notification/blob/main/Thumbnail%20(2).jpg)](https://www.youtube.com/watch?v=PIjIxtgzOJk)
