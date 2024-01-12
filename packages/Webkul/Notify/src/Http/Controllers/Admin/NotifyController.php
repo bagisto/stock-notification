@@ -59,12 +59,10 @@ class NotifyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\View\View
      */
-    public function updateStockStatus(Request $request)
+    public function send_notification()
     {
-        $notificationId = $request->notificationId;
-
         try {
-            $data = $this->notifyRepository->find($notificationId);
+            $data = $this->notifyRepository->find(request()->input('id'));
 
             $customer = $this->customerRepository->find($data->customer_id);
 
