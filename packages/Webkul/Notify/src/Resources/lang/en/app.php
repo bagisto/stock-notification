@@ -7,5 +7,9 @@ return [
         'customer_name'     => 'Customer Name',
         'add_date'          => 'Add Date',
         'send_notification' => 'Send Notification',
+    ],
+
+    'shop'  =>  [
+        'message' => 'We will notify you soon',
     ]
 ];

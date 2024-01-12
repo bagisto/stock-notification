@@ -2,7 +2,7 @@
 
 namespace Webkul\Notify\Http\Controllers\Shop;
 
-use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use Webkul\Notify\Http\Controllers\Controller;
 use Webkul\Notify\Repository\NotifyRepository;
 
@@ -23,11 +23,15 @@ class NotifyController extends Controller
      * 
      * @return \Illuminate\View\View
      */
-    public function store(Request $request)
+    public function store() :JsonResponse
     {
         $this->notifyRepository->create([
-            'product_id'   => $request->product_id,
-            'customer_id'  => $request->customer_id,
+            'product_id'  => request()->input('product_id'),
+            'customer_id' => request()->input('customer_id'),
+        ]);
+
+        return new JsonResponse([
+            'message' => trans('notify::app.shop.message'),
         ]);
     }
 }

@@ -19,11 +19,13 @@ class NotifyServiceProvider extends ServiceProvider
     public function boot()
     {
 
+        $this->publishes([__DIR__ . '/../Resources/views/products/view.blade.php' => ('packages/Webkul/Shop/src/Resources/views/products/view.blade.php')]);
+
         $this->app->register(ModuleServiceProvider::class);
 
         $this->app->register(EventServiceProvider::class);
 
-        $this->loadMigrationsFrom(__DIR__ .'/../Database/Migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
 
         $this->loadRoutesFrom(__DIR__ . '/../Routes/admin-routes.php');
 
@@ -42,7 +44,8 @@ class NotifyServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            dirname(__DIR__) . '/Config/admin-menu.php', 'menu.admin'
+            dirname(__DIR__) . '/Config/admin-menu.php',
+            'menu.admin'
         );
     }
 }

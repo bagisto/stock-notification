@@ -64,8 +64,6 @@ class NotifyDataGrid extends DataGrid
             'filterable' => false,
         ]);
 
-
-
         $this->addColumn([
             'index'      => 'customer_name',
             'label'      => trans('notify::app.admin.customer_name'),
@@ -74,7 +72,6 @@ class NotifyDataGrid extends DataGrid
             'sortable'   => true,
             'filterable' => false,
         ]);
-
 
         $this->addColumn([
             'index'      => 'created_at',
@@ -92,9 +89,6 @@ class NotifyDataGrid extends DataGrid
             'searchable' => true,
             'sortable'   => true,
             'filterable' => false,
-            'closure'    => function ($value) {
-                return '<a href="" class="secondary-button" data-product-id="' . $value->id . '" onclick="sendQuickMail(' . $value->id . ')">' . trans('notify::app.admin.send_notification') . '</a>';
-            },
         ]);
     }
 }
